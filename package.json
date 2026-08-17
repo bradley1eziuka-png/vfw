@@ -1,0 +1,14 @@
+{
+  "name": "vfw-post-4093-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static site for VFW Post 4093, Carleton, Michigan",
+  "type": "module",
+  "scripts": {
+    "screenshot": "node screenshot.mjs"
+  },
+  "devDependencies": {
+    "puppeteer": "^23.0.0",
+    "sharp": "^0.35.3"
+  }
+}

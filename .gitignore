@@ -1,0 +1,9 @@
+node_modules/
+.DS_Store
+temporary screenshots/
+
+# Reference/skill material used during the build, not part of the site itself
+impeccable-main/
+taste-skill-main/
+marketingskills-main/
+Agent-Skills-for-Context-Engineering-main/
