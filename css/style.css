@@ -365,6 +365,15 @@ summary:focus-visible {
   padding-block: var(--space-6) var(--space-5);
   max-width: 62ch;
 }
+/* .page-header is a <section>, so it also inherits the generic
+   `section { padding-block: var(--space-6) }` rule below, stacking with
+   .page-header__inner's own padding above. Left as-is at mobile widths
+   (established, reads fine); cancelled at desktop where the combined
+   ~160px/128px of padding reads as sparse next to a one-line H1 + subhead. */
+@media (min-width: 900px) {
+  .page-header { padding-block: 0; }
+  .page-header__inner { padding-block: var(--space-5) var(--space-4); }
+}
 .page-header h1 {
   color: #FFFFFF;
   font-size: clamp(2rem, 3.2vw + 1rem, 2.75rem);
@@ -453,6 +462,15 @@ summary:focus-visible {
   gap: var(--space-3) var(--space-5);
   align-items: center;
 }
+/* .activity is a <section>, which by default inherits the generic
+   `section { padding-block: var(--space-6) }` rule below — stacking with
+   .activity__inner's own padding to make this compact strip far taller
+   than intended. Left as-is at mobile widths (established, reads fine);
+   cancelled at desktop where the extra height reads as sparse. */
+@media (min-width: 900px) {
+  .activity { padding-block: 0; }
+  .activity__inner { padding-block: var(--space-4); }
+}
 .activity__badge {
   font-size: 0.75rem;
   font-weight: 700;
@@ -461,11 +479,8 @@ summary:focus-visible {
   color: var(--color-burgundy);
 }
 .activity__row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-1) var(--space-2);
-  align-items: baseline;
   font-size: 0.9375rem;
+  line-height: 1.6;
 }
 .activity__row strong { color: var(--color-navy); }
 

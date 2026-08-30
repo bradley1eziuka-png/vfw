@@ -70,10 +70,11 @@
           <div class="event-featured__body">
             <h2>Thursday Bingo</h2>
             <p class="event-featured__intro">State-legal charity bingo, played from a computer, every week. Some players come every Thursday, others once a month, everyone's welcome to find their rhythm.</p>
+            <!-- Doors/time and house-rule text single-sourced in js/main.js (BINGO_HOURS, BINGO_FOOD_POLICY). Edit there, not here. -->
             <div class="event-details">
               <div class="event-details__item">
                 <strong>Doors &amp; time</strong>
-                Doors open 4pm. Bingo begins 6pm, runs to 10pm.
+                <span data-bingo-hours>Doors open 4pm. Bingo begins 6pm, runs to 10pm.</span>
               </div>
               <div class="event-details__item">
                 <strong>Age</strong>
@@ -89,7 +90,7 @@
               </div>
               <div class="event-details__item">
                 <strong>House rule</strong>
-                Kitchen food available; outside food isn't permitted.
+                <span data-bingo-food>Kitchen food available; outside food isn't permitted.</span>
               </div>
             </div>
 
