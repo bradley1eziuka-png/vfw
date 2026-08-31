@@ -650,10 +650,10 @@ section { padding-block: var(--space-6); }
   border-radius: var(--radius-md);
   overflow: hidden; /* clips the banner photo to the card's rounded corners */
 }
-.event-featured__banner { aspect-ratio: 2 / 1; }
+.event-featured__banner { aspect-ratio: 3 / 1; }
 .event-featured__banner .photo {
   border-radius: 0;
-  object-position: center 25%; /* keep the call board / banner / faces in frame on the wide crop */
+  object-position: center 32%; /* keep the call board / banner / faces in frame on the wide crop */
 }
 .event-featured__content {
   padding: var(--space-4);
