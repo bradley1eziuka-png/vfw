@@ -118,8 +118,14 @@
   <section class="activity" aria-label="This week at the Post">
     <div class="wrap activity__inner">
       <span class="activity__badge">This week</span>
-      <!-- Bingo hours/food text and the next-Thursday date are single-sourced in js/main.js (BINGO_HOURS, BINGO_FOOD_POLICY, and the next-bingo date calc). Edit there, not here. -->
-      <p class="activity__row"><strong>Thursday Bingo:</strong> <span data-bingo-hours>Doors open 4pm. Bingo begins 6pm, runs to 10pm.</span> <span data-bingo-food>Kitchen food available; outside food isn't permitted.</span> Next up: <strong><span data-next-bingo>Thursday</span></strong>.</p>
+      <div class="activity__event-row">
+        <div class="activity__event">
+          <p class="activity__event-name">Thursday Bingo</p>
+          <!-- Hours/food text single-sourced in js/main.js (BINGO_HOURS, BINGO_FOOD_POLICY). Edit there, not here. -->
+          <p class="activity__event-detail"><span data-bingo-hours>Doors open 4pm. Bingo begins 6pm, runs to 10pm.</span> <span data-bingo-food>Kitchen food available; outside food isn't permitted.</span></p>
+        </div>
+        <p class="activity__next"><span class="activity__next-label">Next up</span><strong data-next-bingo>Thursday</strong></p>
+      </div>
       <p class="activity__row">700 Carleton Rockwood Rd, Carleton, MI. Call <a href="tel:+17346549216">734-654-9216</a>.</p>
     </div>
   </section>
