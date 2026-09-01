@@ -653,7 +653,7 @@ section { padding-block: var(--space-6); }
 .event-featured__banner { aspect-ratio: 3 / 1; }
 .event-featured__banner .photo {
   border-radius: 0;
-  object-position: center 75%; /* biased low so seated players fill the frame, not the wall/pictures above them */
+  object-position: center 58%; /* keep seated players' heads in frame without showing the wall above them */
 }
 .event-featured__content {
   padding: var(--space-4);
