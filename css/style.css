@@ -991,6 +991,13 @@ section { padding-block: var(--space-6); }
 .contact-detail__label { display: block; font-weight: 600; color: var(--color-navy); margin-bottom: 0.2rem; }
 .contact-detail p { font-size: 0.9375rem; color: var(--color-charcoal); }
 .contact-detail .pending-note { margin-top: 0; }
+.contact-detail p a,
+.form-note a {
+  color: var(--color-navy);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
 
 .map-embed {
   border-radius: var(--radius-lg);
