@@ -279,22 +279,65 @@ summary:focus-visible {
 
 /* ---------- Hero ---------- */
 .hero {
+  position: relative;
+  overflow: hidden;
   background: var(--color-navy);
   color: var(--color-bg);
+  display: flex;
+  align-items: center;
+  padding-block: 0; /* cancel the generic `section` padding below; this section manages its own via .hero__inner */
+  min-height: 560px;
+}
+@media (min-width: 700px) {
+  .hero { min-height: 640px; }
+}
+@media (min-width: 900px) {
+  .hero { min-height: clamp(680px, 82vh, 760px); }
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+  transform: scale(1.03);
+  z-index: 0;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, transparent 78%, var(--color-bg) 100%),
+    linear-gradient(
+      90deg,
+      rgba(10, 37, 61, 0.97) 0%,
+      rgba(10, 37, 61, 0.95) 45%,
+      rgba(10, 37, 61, 0.86) 62%,
+      rgba(10, 37, 61, 0.55) 80%,
+      rgba(10, 37, 61, 0.32) 100%
+    );
+}
+@media (max-width: 899px) {
+  .hero__overlay {
+    background:
+      linear-gradient(180deg, transparent 78%, var(--color-bg) 100%),
+      linear-gradient(180deg, rgba(10, 37, 61, 0.95), rgba(10, 37, 61, 0.9));
+  }
 }
 
 .hero__inner {
-  display: grid;
-  gap: var(--space-5);
-  padding-block: var(--space-6) var(--space-5);
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-block: var(--space-6);
 }
 
-@media (min-width: 900px) {
-  .hero__inner {
-    grid-template-columns: 1.05fr 0.95fr;
-    align-items: center;
-    padding-block: var(--space-7) var(--space-6);
-  }
+.hero__content {
+  max-width: 620px;
 }
 
 .hero__eyebrow {
@@ -306,8 +349,10 @@ summary:focus-visible {
 
 .hero h1 {
   color: #FFFFFF;
-  font-size: clamp(2.35rem, 4.6vw + 1rem, 3.75rem);
+  font-size: clamp(2.5rem, 2.6vw + 1.6rem, 4rem);
   font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
   margin-bottom: var(--space-3);
 }
 
@@ -323,17 +368,10 @@ summary:focus-visible {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
-  margin-bottom: var(--space-5);
 }
 
 .hero .btn-secondary { color: #FFFFFF; border-color: rgba(248, 246, 241, 0.5); }
 .hero .btn-secondary:hover { background: #FFFFFF; color: var(--color-navy); }
-
-.hero__figure {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  border: 1px solid rgba(248, 246, 241, 0.16);
-}
 
 .placeholder-block {
   background: repeating-linear-gradient(
@@ -395,8 +433,6 @@ summary:focus-visible {
   border-radius: var(--radius-lg);
   display: block;
 }
-.hero__figure .photo { border-radius: 0; }
-
 .photo-pair {
   display: grid;
   gap: var(--space-3);
@@ -405,22 +441,6 @@ summary:focus-visible {
 }
 @media (min-width: 640px) {
   .photo-pair { grid-template-columns: repeat(2, 1fr); }
-}
-
-.hero__figure .placeholder-block {
-  border-radius: 0;
-  border: none;
-  min-height: 320px;
-  color: var(--color-bg);
-  /* Solid dark stripes (not alpha-over-off-white) so off-white text stays
-     readable everywhere in the pattern, not just on the darker band. */
-  background: repeating-linear-gradient(
-    135deg,
-    #0c2033,
-    #0c2033 10px,
-    #14324f 10px,
-    #14324f 20px
-  );
 }
 
 /* ---------- Trust / info strip ---------- */
