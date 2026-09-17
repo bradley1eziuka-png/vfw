@@ -310,22 +310,18 @@ summary:focus-visible {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background:
-    linear-gradient(180deg, transparent 78%, var(--color-bg) 100%),
-    linear-gradient(
-      90deg,
-      rgba(10, 37, 61, 0.97) 0%,
-      rgba(10, 37, 61, 0.95) 45%,
-      rgba(10, 37, 61, 0.86) 62%,
-      rgba(10, 37, 61, 0.55) 80%,
-      rgba(10, 37, 61, 0.32) 100%
-    );
+  background: linear-gradient(
+    90deg,
+    rgba(10, 37, 61, 0.97) 0%,
+    rgba(10, 37, 61, 0.95) 45%,
+    rgba(10, 37, 61, 0.86) 62%,
+    rgba(10, 37, 61, 0.55) 80%,
+    rgba(10, 37, 61, 0.32) 100%
+  );
 }
 @media (max-width: 899px) {
   .hero__overlay {
-    background:
-      linear-gradient(180deg, transparent 78%, var(--color-bg) 100%),
-      linear-gradient(180deg, rgba(10, 37, 61, 0.95), rgba(10, 37, 61, 0.9));
+    background: linear-gradient(180deg, rgba(10, 37, 61, 0.95), rgba(10, 37, 61, 0.9));
   }
 }
 
